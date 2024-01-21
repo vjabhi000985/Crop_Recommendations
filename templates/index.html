@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background: url('/static/crop.jpg');
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        legend{
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+        }
+        label{
+            margin: 1px 0px 5px;
+        }
+        div.main{
+            width: 600px;
+            margin: 20px auto 0px auto;
+        }
+        div.recommend{
+            background-color: rgba(0,0,0,0.5);
+            width: 100%;
+            font-size: 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+        }
+        label{
+            color: #FFF;
+        }
+        .btn{
+            background-color: #4CBB17;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 1px;
+            border: none;
+            border-radius: 2px;
+            margin-left: 220px;
+        }
+        input{
+            border: none;
+            border-radius: 2px;
+            width: 100%;
+            color: black;
+        }
+        input#temperature,
+        #humidity,#Ph,
+        #rainfall{
+            width: 50%;
+        }
+        button:hover{
+            background-color: #B2EC2D;
+        }
+    </style>
+    <title>Crop Recommendations</title>
+</head>
+<body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <span style="padding-left: 10px; padding-right: 10px;">
+                    🌱
+                </span>
+                Crop Recommendations
+            </a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About Me</a></li>
+          </ul>
+          <form class="navbar-form navbar-left" action="/action_page.php">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+    </nav>
+    <!--End of the navigation bar-->
+    <!--Start of the form-->
+
+    <div class="main">
+        <div class="recommend">
+            <h2>Get Your Recommendations</h2>
+                <form action="/predict" method="post">
+                <fieldset>
+                    <legend>Soil Nutrient Levels</legend>
+                    <label for="Nitrogen">Nitrogen (N):</label>
+                    <input type="number" name="Nitrogen" id="Nitrogen" placeholder="Enter Nitrogen Level" min="0" required>
+                    <br><br>
+                    <label for="Phosphorus">Phosphorus (P):</label>
+                    <input type="number" name="Phosphorus" id="Phosphorus" placeholder="Enter Phosphorus Level" min="0" required>
+                    <br><br>
+                    <label for="Potassium">Potassium (K):</label>
+                    <input type="number" name="Potassium" id="Potassium" placeholder="Enter Potassium Level" min="0" required>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Environmental Conditions</legend>
+                    <label for="Temperature">Temperature ():</label>
+                    <input type="number" id="Temperature" name="Temperature" placeholder="Enter Temperature" step="0.1" min="-50" max="50" required>
+                    <br>
+                    <label for="Humidity">Humidity:</label>
+                    <input type="number" id="Humidity" name="Humidity" placeholder="Enter Humidity" step="0.1" min="0" max="100" required>
+                    <br>
+                    <label for="Soil pH">Soil pH:</label>
+                    <input type="number" id="Ph" name="Ph" placeholder="Enter Soil Ph" step="0.1" min="4" max="10" required>
+                    <br>
+                    <label for="Rainfall">Rainfall (mm):</label>
+                    <input type="number" id="Rainfall" name="Rainfall" placeholder="Enter Rainfall" step="0.1" min="0" required>
+                    <br><br>
+                </fieldset>
+                <button class="btn" type="submit">Get Recommendations</button>
+                </form>
+                <!--End of the form-->
+            </div>
+        </div>
+</body>      
+</html>
