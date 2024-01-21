@@ -2,11 +2,11 @@
 This project leverages machine learning and web development to provide tailored crop recommendations based on soil and environmental conditions.
 
 ## Technologies Used:
-Python
-Flask (web framework)
-Machine Learning Libraries (e.g., scikit-learn, pandas)
-Pickle (model serialization)
-HTML, CSS, JavaScript (frontend development)
+1. Python
+2. Flask (web framework)
+3. Machine Learning Libraries (e.g., scikit-learn, pandas)
+4. Pickle (model serialization)
+5. HTML, CSS, JavaScript (frontend development)
 
 ## Key Features:
 1. User-friendly interface to input soil and environmental data.
